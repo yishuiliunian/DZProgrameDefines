@@ -16,19 +16,14 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DZProgrameDefines"
-  s.version      = "0.0.1"
-  s.summary      = "A short description of DZProgrameDefines."
+  s.version      = "1.0.0"
+  s.summary      = "一些优化编程效率的宏定义"
 
   s.description  = <<-DESC
-                   A longer description of DZProgrameDefines in Markdown format.
-
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
+                   一些提高编程效率的宏定义，比如对于property的定义（包含各种描述符的定义），初始化UIView的子类等等
                    DESC
 
-  s.homepage     = "http://EXAMPLE/DZProgrameDefines"
+  s.homepage     = "https://github.com/yishuiliunian/DZProgrameDefines"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -39,8 +34,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -64,8 +58,8 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  s.platform     = :ios
+  s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -128,7 +122,7 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+  s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
