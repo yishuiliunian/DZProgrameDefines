@@ -84,7 +84,9 @@ name.numberOfTouchesRequired = 1;\
 
 #define DZ_CheckObjcetClass(object, cla) [object isKindOfClass:[cla class]]
 
+/**
+ *  数据类型的转化
+ */
 
-@interface DZProgramDefines : NSObject
-
-@end
+#define DZ_STR_2_URL(str) [NSURL URLWithString:str]
+#define DZ_NUM_2_STR(num) [@(num) stringValue]

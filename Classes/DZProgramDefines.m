@@ -7,7 +7,3 @@
 //
 
 #import "DZProgramDefines.h"
-
-@implementation DZProgramDefines
-
-@end
