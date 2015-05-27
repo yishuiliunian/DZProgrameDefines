@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DZProgrameDefines"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "一些优化编程效率的宏定义"
 
   s.description  = <<-DESC
