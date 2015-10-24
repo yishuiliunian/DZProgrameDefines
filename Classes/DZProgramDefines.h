@@ -90,3 +90,26 @@ name.numberOfTouchesRequired = 1;\
 
 #define DZ_STR_2_URL(str) [NSURL URLWithString:str]
 #define DZ_NUM_2_STR(num) [@(num) stringValue]
+
+
+//Notification defaults
+
+
+#define DZExternObserverMessage(msg) \
+void DZAddObserverFor##msg (NSObject* ob, SEL selector);\
+void DZRemoveObserverFor##msg (NSObject* ob);\
+void DZPost##msg (NSDictionary* dic);\
+
+
+#define DZObserverMessage(message) \
+void DZAddObserverFor##message (NSObject* ob, SEL selector) { \
+[[NSNotificationCenter defaultCenter] addObserver:ob selector:selector name:@""#message object:nil]; \
+}\
+\
+void DZRemoveObserverFor##message (NSObject* ob) {\
+[[NSNotificationCenter defaultCenter] removeObserver:ob name:@""#message object:nil];\
+}\
+\
+void DZPost##message (NSDictionary* dic) {\
+[[NSNotificationCenter defaultCenter] postNotificationName:@""#message object:nil userInfo:dic];\
+}
