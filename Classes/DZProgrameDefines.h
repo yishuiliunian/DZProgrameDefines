@@ -1,5 +1,5 @@
 //
-//  DZProgramDefines.h
+//  DZProgrameDefines.h
 //  TimeUI
 //
 //  Created by Stone Dong on 14-1-21.
@@ -88,7 +88,7 @@ name.numberOfTouchesRequired = 1;\
  *  数据类型的转化
  */
 
-#define DZ_STR_2_URL(str) [NSURL URLWithString:str]
+#define DZ_STR_2_URL(str)   ( ([str hasPrefix:@"http"] || !str )? [NSURL URLWithString:str] : [NSURL fileURLWithPath:str])
 #define DZ_NUM_2_STR(num) [@(num) stringValue]
 
 
