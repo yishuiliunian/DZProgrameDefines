@@ -95,6 +95,13 @@ name.numberOfTouchesRequired = 1;\
 //Notification defaults
 
 
+FOUNDATION_EXTERN Class DZGetCurrentClassInvocationSEL(NSString*  functionString);
+
+FOUNDATION_EXTERN BOOL DZCheckSuperResponseToSelector(Class cla, SEL selector);
+#define __SEL_CLASS__  DZGetCurrentClassInvocationSEL([NSString stringWithFormat:@"%s",__FUNCTION__])
+#define __DZSuperResponseCMD__ DZCheckSuperResponseToSelector(__SEL_CLASS__, _cmd) 
+
+
 #define DZExternObserverMessage(msg) \
 void DZAddObserverFor##msg (NSObject* ob, SEL selector);\
 void DZRemoveObserverFor##msg (NSObject* ob);\
