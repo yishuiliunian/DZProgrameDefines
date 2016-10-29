@@ -98,6 +98,8 @@ name.numberOfTouchesRequired = 1;\
 FOUNDATION_EXTERN Class DZGetCurrentClassInvocationSEL(NSString*  functionString);
 
 FOUNDATION_EXTERN BOOL DZCheckSuperResponseToSelector(Class cla, SEL selector);
+FOUNDATION_EXTERN void swizzInstance(Class class, SEL originalSelector, SEL swizzledSelector);
+
 #define __SEL_CLASS__  DZGetCurrentClassInvocationSEL([NSString stringWithFormat:@"%s",__FUNCTION__])
 #define __DZSuperResponseCMD__ DZCheckSuperResponseToSelector(__SEL_CLASS__, _cmd) 
 
