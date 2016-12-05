@@ -122,3 +122,11 @@ void DZRemoveObserverFor##message (NSObject* ob) {\
 void DZPost##message (NSDictionary* dic) {\
 [[NSNotificationCenter defaultCenter] postNotificationName:@""#message object:nil userInfo:dic];\
 }
+
+
+FOUNDATION_EXTERN void  DZEnsureMainThread(void(^mainSafeBlock)());
+
+
+#define  DZEnsureMainThreadBegin  DZEnsureMainThread(^{
+
+#define  DZEnsureMainThreadEnd  });

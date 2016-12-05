@@ -57,3 +57,16 @@ void swizzInstance(Class class, SEL originalSelector, SEL swizzledSelector)
         method_exchangeImplementations(originalMethod, swizzledMethod);
     }
 }
+
+
+void   DZEnsureMainThread(void(^mainSafeBlock)())
+{
+    if (mainSafeBlock == NULL) {
+        return;
+    }
+    if ([NSThread isMainThread]) {
+        mainSafeBlock();
+    } else {
+        dispatch_sync(dispatch_get_main_queue(), mainSafeBlock);
+    }
+}
